@@ -116,13 +116,13 @@ if(!empty($_POST["onmindsubmit"])){// ako je kliknuto onda odradi ovo dole
                     $dejt = $row["date"];
                     $email = $row["email"];
                     echo 
-                    <<<HTML
+                    "
                         <div class='coms'>Name: $usajdi<br>
                         Said:  $body<br>
                         id:  $ajdi<br>
                         Mail: $email<br>
                         <div class='date'>$dejt</div></div>
-                    HTML;
+                    ";
 
                 }
                 echo "</div>";
@@ -136,9 +136,3 @@ if(!empty($_POST["onmindsubmit"])){// ako je kliknuto onda odradi ovo dole
         
 </body>
 </html>
-
-
-
-
-
-

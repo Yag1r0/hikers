@@ -70,36 +70,37 @@ if(!empty($_POST["regsubmit"])){
             $registerMessage = "Erroreditordi!";
         }
         if($registerMessage){
-            echo 
-            <<<HTML
-            <div class="container">
+            echo '<div class="container">
             <div class="successmsg">
                 <span class="closebtn">&times;</span>
-                <strong>BRAVO!</strong> $registerMessage
+                <strong>BRAVO!</strong> '.$registerMessage.'
             </div>
-            </div>
+            </div>';
 
-            HTML;
+            
     
-        }elseif($registerMessage === false)
+        }
+        if($registerMessage === false)
         {
     
             echo "Passwords do not match";
         }
     }
+
+
+
     elseif(strlen($_POST["username"]) < 6){
 
         echo 
         
-        <<<HTML
-            <div class="container">
+        '<div class="container">
             <div class="successmsg">
                 <span class="closebtn">&times;</span>
                 <strong>Username must be longer thn 6 chars</strong> $registerMessage
             </div>
             </div>
 
-            HTML;
+            ';
     }
 }
 
