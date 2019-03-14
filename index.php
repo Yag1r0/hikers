@@ -38,5 +38,12 @@
             </form>
         </nav>
     </header>
+    <main>
+        <h1>Lets hike everyone!</h1>
+        <?php include ("registracija.php") ?>
+   
+       
+        
+    </main>
 </body>
 </html>
