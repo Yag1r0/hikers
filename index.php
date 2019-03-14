@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="CSS/style.css">
     <title>Hikers</title>
 </head>
 <body>
@@ -20,13 +21,14 @@
             <div id="navContent">
 
             Hikers
+            <!-- -->
             <form action="processlogin.php" method="POST">
                 <input type="text" name="username" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
                 <input type="submit" name="login" value="Login">
                 
                 <?php
-                    //proverava cookies i ispisuje poruku or waatever
+                    //proverava cookies i ispisuje poruku
                     if(!empty($_COOKIE["poruka"])) {
                         echo $_COOKIE["poruka"];
                         unset($_COOKIE["poruka"]);
