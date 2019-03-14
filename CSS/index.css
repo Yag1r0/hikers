@@ -1,0 +1,55 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    display: flex;
+    height: 10vh;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90vh;
+}
+
+#register{
+
+
+    display: flex;
+    flex-direction: column;
+}
+input{
+
+    margin: 7px;
+}
+
+.successmsg{
+
+
+    height: 300px;
+    width: 400px;
+    background-color: green;
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    transition: .5s;
+
+}
+
+.closebtn{
+
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
