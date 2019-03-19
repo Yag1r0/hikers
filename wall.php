@@ -24,8 +24,31 @@ if(!empty($_GET["username"])){
 	$sql3 = "SELECT * FROM users WHERE username = '$username'";
 	$result = $conn->query($sql3);
 	$row = mysqli_fetch_assoc($result);
-	
-} 
+    $name = $row['name'] ." " .$row['lastname'];
+    
+    // select postova
+$sql2 = "SELECT posts.id,
+        users.uid,
+        posts.userId,
+        posts.privateStatus,
+        posts.date,
+        users.name,
+        users.username,
+        users.lastname,
+        posts.body FROM posts INNER JOIN users ON posts.userId=users.uid
+        WHERE users.uid='".$row['uid']."' ORDER BY posts.id DESC";
+    $result = $conn->query($sql2);
+    $postsRows = [];
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            //save users and posts in this variable
+            $postsRows[] = $row;
+        }
+    } else {
+        $postMessage = "Trenutno nema podataka u bazi";
+    }
+}
 //end of getting users username code
 	$message ="Hello" ." " .$username."!";
 
@@ -42,6 +65,16 @@ $smarty->assign(
 $smarty->assign(
     'message',
      $message
+);
+
+$smarty->assign(
+    'name',
+     $name
+);
+
+$smarty->assign(
+    'postsRows',
+     $postsRows
 );
 
 /* end send request */
